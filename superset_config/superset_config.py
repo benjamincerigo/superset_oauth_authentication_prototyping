@@ -31,7 +31,23 @@ OAUTH_PROVIDERS = [
             'api_base_url':'http://localhost:8000/', # Base URL for the API
 
         }
-    }
+    },
+   {
+        "name": "keycloak",
+        "icon": "fa-key",
+        "token_key": "access_token",
+        "remote_app": {
+            "client_id": "superset",
+            "client_secret": "OgnR0vEWQXZZcKx9hKGss6r6fadM24uk",
+            # Needed for the userinfo get to work
+            'api_base_url':'http://localhost:8080/realms/master/protocol/',
+            "client_kwargs": {
+                "scope": "openid email profile"
+            },
+            'server_metadata_url': 'http://localhost:8080/realms/master/.well-known/openid-configuration',
+
+        },
+    },
 ]
 
 AUTH_ROLES_MAPPING = {

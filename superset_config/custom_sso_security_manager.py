@@ -25,8 +25,12 @@ class CustomSsoSecurityManager(SupersetSecurityManager):
             logging.info("permissions: {0}.".format(access_token.get("permissions")))
             userinfo["permissions"] = access_token.get("permissions")
             return userinfo
+        else:
+            # Irritaitng that this is not oauth_user_info :(
+            return self.get_oauth_user_info(provider, response)
 
-    def _oauth_calculate_user_roles(self, userinfo) -> list[str]:
-        fab_role = self.find_role("console_created_role")
-        return [fab_role] if fab_role else []
+    #  def _oauth_calculate_user_roles(self, userinfo) -> list[str]:
+
+        #  fab_role = self.find_role("console_created_role")
+        #  return [fab_role] if fab_role else []
 
