@@ -26,3 +26,7 @@ class CustomSsoSecurityManager(SupersetSecurityManager):
             userinfo["permissions"] = access_token.get("permissions")
             return userinfo
 
+    def _oauth_calculate_user_roles(self, userinfo) -> list[str]:
+        fab_role = self.find_role("console_created_role")
+        return [fab_role] if fab_role else []
+
