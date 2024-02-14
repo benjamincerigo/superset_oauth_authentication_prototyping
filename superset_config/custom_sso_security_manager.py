@@ -23,5 +23,6 @@ class CustomSsoSecurityManager(SupersetSecurityManager):
                 userinfo["role_keys"] = ["SUPERSET_GAMMA"]
             access_token = fief.validate_access_token(response["access_token"])
             logging.info("permissions: {0}.".format(access_token.get("permissions")))
+            userinfo["permissions"] = access_token.get("permissions")
             return userinfo
 
