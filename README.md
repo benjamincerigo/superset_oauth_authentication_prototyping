@@ -48,6 +48,14 @@ Log in with the admin user that you created with `superset fab create-admin`
 superset: https://superset.apache.org/docs/installation/configuring-superset/#custom-oauth2-configuration
 FAB: https://flask-appbuilder.readthedocs.io/en/latest/security.html#authentication-oauth
 
+## Default db for superset
+https://superset.apache.org/docs/frequently-asked-questions/#:~:text=By%20default%2C%20Superset%20creates%20and,superset%2Fsuperset.
+
+to access:
+```
+sqlite3 ~/.superset/superset.db
+```
+
 ## Fief
 
 See [fief.md](/fief.md)
