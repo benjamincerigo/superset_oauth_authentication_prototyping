@@ -44,6 +44,10 @@ http://localhost:8088/
 
 Log in with the admin user that you created with `superset fab create-admin`
 
+## General oauth cusomtisation
+superset: https://superset.apache.org/docs/installation/configuring-superset/#custom-oauth2-configuration
+FAB: https://flask-appbuilder.readthedocs.io/en/latest/security.html#authentication-oauth
+
 ## Fief
 
 See [fief.md](/fief.md)
