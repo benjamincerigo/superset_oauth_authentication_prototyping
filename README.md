@@ -15,9 +15,10 @@ pip install -r requirements.txt
 Once setup the .venv:
 
 ```
+cd superset_config
 export FLASK_APP=superset
-export SUPERSET_CONFIG_PATH=./superset_config/superset_config.py
-export PYTHONPATH="${PYTHONPATH}:superset_config/superset_config.py"
+export SUPERSET_CONFIG_PATH=./superset_config.py
+export PYTHONPATH="${PYTHONPATH}:./superset_config.py:./custom_sso_security_manager.py"
 superset db upgrade
 superset fab create-admin
 
@@ -30,12 +31,19 @@ superset init
 
 ## Run superset
 ```
+cd superset_config
 export FLASK_APP=superset
-export SUPERSET_CONFIG_PATH=./superset_config/superset_config.py
-export PYTHONPATH="${PYTHONPATH}:superset_config/superset_config.py"
+export SUPERSET_CONFIG_PATH=./superset_config.py
+
+export PYTHONPATH="${PYTHONPATH}:./superset_config.py:./custom_sso_security_manager.py"
+
 superset run -p 8088 --with-threads --reload --debugger
 ```
 
 http://localhost:8088/
 
 Log in with the admin user that you created with `superset fab create-admin`
+
+## Fief
+
+See [fief.md](/fief.md)
