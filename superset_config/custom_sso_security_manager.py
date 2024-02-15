@@ -29,6 +29,7 @@ class CustomSsoSecurityManager(SupersetSecurityManager):
             # Irritaitng that this is not oauth_user_info :(
             return self.get_oauth_user_info(provider, response)
 
+    # Here is an example of how to do the role additions for the oauth users
     #  def _oauth_calculate_user_roles(self, userinfo) -> list[str]:
 
         #  fab_role = self.find_role("console_created_role")
